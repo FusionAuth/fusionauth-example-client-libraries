@@ -15,5 +15,3 @@ client = FusionAuthClient(api_key, 'http://localhost:9011')
 client_response = client.patch_application(APPLICATION_ID, {"application": {"passwordlessConfiguration":{"enabled":True}}})
 if not client_response.was_successful():
   sys.exit("couldn't update application "+ str(client_response.error_response))
-
-
