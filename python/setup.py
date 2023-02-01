@@ -23,8 +23,6 @@ client_response = client.patch_tenant(tenant["id"], {"tenant": {"issuer":"http:/
 if not client_response.was_successful():
   sys.exit("couldn't update tenant "+ str(client_response.error_response))
 
-#sys.exit(0)
-
 # generate RSA keypair for signing
 rsa_key_id = "356a6624-b33c-471a-b707-48bbfcfbc593"
 
