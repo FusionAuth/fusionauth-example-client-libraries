@@ -4,7 +4,7 @@ Examples of usage of FusionAuth client libraries to configure and manage FusionA
 
 There's a readme in each of the language subdirectories.
 
-You can [learn more about our client libraries](https://fusionauth.io/docs/v1/tech/client-libraries/)
+You can [learn more about our client libraries.](https://fusionauth.io/docs/v1/tech/client-libraries/)
 
 ## Install FusionAuth Locally
 
