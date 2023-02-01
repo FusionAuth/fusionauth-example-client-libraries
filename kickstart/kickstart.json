@@ -1,0 +1,31 @@
+{
+  "variables": {
+    "adminEmail": "admin@example.com",
+    "password": "password"
+  },
+  "apiKeys": [
+    {
+      "key": "pNEPFFdeFExk67sQmOOBkT09ekvpThYJDbqgyg00V9raP7i_EXAMPLE_ONLY"
+    }
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "url": "/api/user/registration/00000000-0000-0000-0000-000000000001",
+      "body": {
+        "user": {
+          "email": "#{adminEmail}",
+          "password": "#{password}",
+          "firstName": "Richard",
+          "lastName": "Hendricks"
+        },
+        "registration": {
+          "applicationId": "#{FUSIONAUTH_APPLICATION_ID}",
+          "roles": [
+            "admin"
+          ]
+        }
+      }
+    }
+  ]
+}
