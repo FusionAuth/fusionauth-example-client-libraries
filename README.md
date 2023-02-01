@@ -12,7 +12,7 @@ If you have docker, you can install FusionAuth locally to test out these scripts
 
 Run `docker-compose up` to stand up FusionAuth.
 
-Then use [the API key found in the kickstart file](/FusionAuth/fusionauth-example-client-libraries/blob/main/kickstart/kickstart.json#L8) whenever one is needed.
+Then use [the API key found in the kickstart file](/blob/main/kickstart/kickstart.json#L8) whenever one is needed.
 
 [Learn more about Kickstart.](https://fusionauth.io/docs/v1/tech/installation-guide/kickstart)
 
