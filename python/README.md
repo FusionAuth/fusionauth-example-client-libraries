@@ -18,4 +18,6 @@ pip install -r requirements.txt
 
 ## Usage
 
+```
 fusionauth_api_key=<your api key> python setup.py # or other script
+```
