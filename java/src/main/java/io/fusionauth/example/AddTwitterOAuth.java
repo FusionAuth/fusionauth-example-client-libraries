@@ -37,7 +37,7 @@ public class AddTwitterOAuth {
 		
     ClientResponse<IdentityProviderResponse, Errors> identityProviderResponse = client.createIdentityProvider(null, twitterIdentityProviderRequest);
     if (!identityProviderResponse.wasSuccessful()) {
-      throw new RuntimeException("couldn't add twitter OAuth");
+      throw new RuntimeException("couldn't add twitter login");
     }
   }
 }
