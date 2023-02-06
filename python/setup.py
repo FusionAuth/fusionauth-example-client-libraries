@@ -42,8 +42,10 @@ application["oauthConfiguration"]["authorizedRedirectURLs"] = ["http://localhost
 application["oauthConfiguration"]["requireRegistration"] = True
 application["oauthConfiguration"]["enabledGrants"] = ["authorization_code", "refresh_token"]
 application["oauthConfiguration"]["logoutURL"] = "http://localhost:8000/"
-application["oauthConfiguration"]["proofKeyForCodeExchangePolicy"] = "Required"
 application["oauthConfiguration"]["clientSecret"] = "change-this-in-production-to-be-a-real-secret"
+
+# some libraries don't support this, notably mozilla-django-oidc: https://github.com/mozilla/mozilla-django-oidc/issues/397
+application["oauthConfiguration"]["proofKeyForCodeExchangePolicy"] = "NotRequiredWhenUsingClientAuthentication"
 
 # assign key from above to sign our tokens. This needs to be asymmetric
 application["jwtConfiguration"] = {}
