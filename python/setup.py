@@ -44,7 +44,8 @@ application["oauthConfiguration"]["enabledGrants"] = ["authorization_code", "ref
 application["oauthConfiguration"]["logoutURL"] = "http://localhost:8000/"
 application["oauthConfiguration"]["clientSecret"] = "change-this-in-production-to-be-a-real-secret"
 
-# some libraries don't support this, notably mozilla-django-oidc: https://github.com/mozilla/mozilla-django-oidc/issues/397
+# some libraries don't support pkce, notably mozilla-django-oidc: https://github.com/mozilla/mozilla-django-oidc/issues/397
+# since we are server side and have a solid client secret, we're okay turning pkce off
 application["oauthConfiguration"]["proofKeyForCodeExchangePolicy"] = "NotRequiredWhenUsingClientAuthentication"
 
 # assign key from above to sign our tokens. This needs to be asymmetric
