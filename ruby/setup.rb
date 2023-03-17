@@ -46,10 +46,10 @@ application["name"] = "RubyExampleApp"
 
 # configure oauth
 application["oauthConfiguration"] = {}
-application["oauthConfiguration"]["authorizedRedirectURLs"] = ["http://localhost:8000/oidc/callback/"] 
+application["oauthConfiguration"]["authorizedRedirectURLs"] = ["http://localhost:3000/auth/my_provider/callback"]
 application["oauthConfiguration"]["requireRegistration"] = true
 application["oauthConfiguration"]["enabledGrants"] = ["authorization_code", "refresh_token"]
-application["oauthConfiguration"]["logoutURL"] = "http://localhost:8000/"
+application["oauthConfiguration"]["logoutURL"] = "http://localhost:3000/"
 application["oauthConfiguration"]["clientSecret"] = "change-this-in-production-to-be-a-real-secret"
 
 # assign key from above to sign our tokens. This needs to be asymmetric
