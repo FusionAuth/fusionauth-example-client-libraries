@@ -1,21 +1,14 @@
-
-
 const {FusionAuthClient} = require('@fusionauth/typescript-client');
 
 APPLICATION_ID = "e9fdb985-9173-4e01-9d73-ac2d60d1dc8e";
 RSA_KEY_ID = "356a6624-b33c-471a-b707-48bbfcfbc593"
 
 // You must supply your API key as an envt var
-
 const fusionAuthAPIKey = process.env.fusionauth_api_key;
-
 if (! fusionAuthAPIKey ) {
   console.log("please set api key in the fusionauth_api_key environment variable")
   process.exit(1)
 }
-
-const client = new FusionAuthClient(fusionAuthAPIKey, 'http://localhost:9011');
-// set the issuer up correctly    
 
 async function getTenant(client) {
   tenant = null
@@ -47,13 +40,38 @@ async function generateKey(client) {
   }
 }
 
+async function enableCORS(client) {
+
+  const corsObject = {
+    "corsConfiguration": {
+      "allowCredentials": true,
+      "allowedHeaders": [ "Accept", "Access-Control-Request-Headers", "Access-Control-Request-Method", "X-Requested-With", "Authorization", "Content-Type", "Last-Modified", "Origin" ],
+      "allowedMethods": [ "PUT", "GET", "POST", "OPTIONS" ],
+      "allowedOrigins": [ "http://localhost:5173" ],
+      "debug": false,
+      "enabled": true,
+      "exposedHeaders": [ "Access-Control-Allow-Origin", "Access-Control-Allow-Credential" ],
+      "preflightMaxAgeInSeconds": 0
+    },
+  }
+
+  try {
+    clientResponse = await client.patchSystemConfiguration({"systemConfiguration": corsObject})
+  } catch (error) {
+    console.log("couldn't create application " + JSON.stringify(error))
+    process.exit(1)
+  }
+
+}
+
 async function createApplication(client) {
 
   application = {}
   application["name"] = "JSExampleApp"
 
   application["oauthConfiguration"] = {}
-  application["oauthConfiguration"]["authorizedRedirectURLs"] = ["http://localhost:3000/auth/my_provider/callback"]
+  application["oauthConfiguration"]["authorizedRedirectURLs"] = ["http://localhost:3000/auth/my_provider/callback","http://localhost:5173"]
+
   application["oauthConfiguration"]["requireRegistration"] = true
   application["oauthConfiguration"]["enabledGrants"] = ["authorization_code", "refresh_token"]
   application["oauthConfiguration"]["logoutURL"] = "http://localhost:3000/"
@@ -114,8 +132,10 @@ async function main(client) {
   user = await getUser(client)
   await patchUser(client, user)
   await registerUser(client, user)
+  await enableCORS(client)
   console.log(user)
 }
 
+const client = new FusionAuthClient(fusionAuthAPIKey, 'http://localhost:9011');
 
 main(client)
