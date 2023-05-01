@@ -70,11 +70,11 @@ async function createApplication(client) {
   application["name"] = "JSExampleApp"
 
   application["oauthConfiguration"] = {}
-  application["oauthConfiguration"]["authorizedRedirectURLs"] = ["http://localhost:3000/auth/my_provider/callback","http://localhost:5173"]
+  application["oauthConfiguration"]["authorizedRedirectURLs"] = ["http://localhost:5173"]
 
   application["oauthConfiguration"]["requireRegistration"] = true
   application["oauthConfiguration"]["enabledGrants"] = ["authorization_code", "refresh_token"]
-  application["oauthConfiguration"]["logoutURL"] = "http://localhost:3000/"
+  application["oauthConfiguration"]["logoutURL"] = "http://localhost:5173/"
   application["oauthConfiguration"]["clientSecret"] = "change-this-in-production-to-be-a-real-secret"
 
   // assign key from above to sign our tokens. This needs to be asymmetric
