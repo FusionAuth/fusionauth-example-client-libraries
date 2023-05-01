@@ -3,7 +3,7 @@ const {FusionAuthClient} = require('@fusionauth/typescript-client');
 APPLICATION_ID = "e9fdb985-9173-4e01-9d73-ac2d60d1dc8e";
 RSA_KEY_ID = "356a6624-b33c-471a-b707-48bbfcfbc593"
 
-// You must supply your API key as an envt var
+// You must supply your API key as an environment variable
 const fusionAuthAPIKey = process.env.fusionauth_api_key;
 if (! fusionAuthAPIKey ) {
   console.log("please set api key in the fusionauth_api_key environment variable")
