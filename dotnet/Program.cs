@@ -15,7 +15,8 @@ namespace Setup
         private static readonly string apiKey = Environment.GetEnvironmentVariable("fusionauth_api_key");
         private static readonly string fusionauthURL = "http://localhost:9011";
 
-        private static readonly string applicationId = "4243b56f-0b45-4882-aa23-ac75eea22d22";
+        private static readonly string applicationId = "e9fdb985-9173-4e01-9d73-ac2d60d1dc8e";
+
 
         static void Main(string[] args)
         {
