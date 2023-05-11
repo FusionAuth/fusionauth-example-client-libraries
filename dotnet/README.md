@@ -15,6 +15,8 @@ dotnet add package JSON.Net
 dotnet add package FusionAuth.Client 
 ```
 
+Then run the program.
+
 ```sh
 dotnet publish -r osx-x64
 fusionauth_api_key=<YOUR_API_KEY> bin/Debug/net7.0/osx-x64/publish/SetupFusionauth 
