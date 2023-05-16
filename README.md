@@ -11,7 +11,7 @@ You can [learn more about our client libraries.](https://fusionauth.io/docs/v1/t
 If you have docker, you can install FusionAuth locally to test out these scripts.
 
 * Clone this repository
-* Run `docker-compose up` to stand up FusionAuth.
+* Run `docker compose up` to stand up FusionAuth.
 * Use [the API key found in the kickstart file](/kickstart/kickstart.json#L8) whenever one is needed.
 * Review the README in each directory for how to run the scripts.
 
