@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Example of setting up an application with typescript.",
   "scripts": {
-    "setup": "node setup.js"
+    "setup": "node setup.js",
+    "setup-express": "node setup-express.js"
   },
   "author": "Dan Moore",
   "license": "Apache-2.0",
