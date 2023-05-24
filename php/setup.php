@@ -148,6 +148,8 @@ $mediator = new class(
                 'accessTokenKeyId' => $this->rsaKeyId,
                 'idTokenKeyId'     => $this->rsaKeyId,
             ],
+            // creating roles
+            'roles' => ['admin'],
         ];
 
 
