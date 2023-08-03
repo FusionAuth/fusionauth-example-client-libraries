@@ -12,7 +12,7 @@ namespace Setup
 {
     class Program
     {
-        private static readonly String applicationName = ".NET Fusion";
+        private static readonly String applicationName = ".NET FusionAuth Application";
         private static readonly String apiKey = Environment.GetEnvironmentVariable("fusionauth_api_key");
         private static readonly String fusionauthURL = "http://localhost:9011";
         private static readonly String authorizedRedirectURL = "https://localhost:5001/callback";
@@ -57,7 +57,7 @@ namespace Setup
             Key rsaKey = new Key();
 
             rsaKey.algorithm = KeyAlgorithm.RS256;
-            rsaKey.name = "For .NET Blazor Server App";
+            rsaKey.name = ".NET FusionAuth Application";
             rsaKey.length = 2048;
             KeyRequest keyRequest = new KeyRequest();
             keyRequest.key = rsaKey;
