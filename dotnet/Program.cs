@@ -12,14 +12,22 @@ namespace Setup
 {
     class Program
     {
-        private static readonly string apiKey = Environment.GetEnvironmentVariable("fusionauth_api_key");
-        private static readonly string fusionauthURL = "http://localhost:9011";
-
-        private static readonly string applicationId = "e9fdb985-9173-4e01-9d73-ac2d60d1dc8e";
-
+        private static readonly String applicationName = ".NET Fusion";
+        private static readonly String apiKey = Environment.GetEnvironmentVariable("fusionauth_api_key");
+        private static readonly String fusionauthURL = "http://localhost:9011";
+        private static readonly String authorizedRedirectURL = "https://localhost:5001/callback";
+        private static readonly String logoutURL = "https://localhost:5001/";
+        private static readonly String applicationId = "e9fdb985-9173-4e01-9d73-ac2d60d1dc8e";
+        private static readonly String clientSecret = "change-this-in-production-to-be-a-real-secret";
 
         static void Main(string[] args)
         {
+
+            if (String.IsNullOrEmpty(apiKey))
+            {
+                throw new ArgumentException("apiKey", "The API key must be set in the environment variable `fusionauth_api_key`");
+            }
+
             FusionAuthSyncClient client = new FusionAuthSyncClient(apiKey, fusionauthURL);
 
             //set the issuer up correctly
@@ -49,7 +57,7 @@ namespace Setup
             Key rsaKey = new Key();
 
             rsaKey.algorithm = KeyAlgorithm.RS256;
-            rsaKey.name = "For DotNetExampleApp";
+            rsaKey.name = "For .NET Blazor Server App";
             rsaKey.length = 2048;
             KeyRequest keyRequest = new KeyRequest();
             keyRequest.key = rsaKey;
@@ -63,14 +71,14 @@ namespace Setup
             Application application = new Application();
             application.oauthConfiguration = new OAuth2Configuration();
             application.oauthConfiguration.authorizedRedirectURLs = new List<string>();
-            application.oauthConfiguration.authorizedRedirectURLs.Add("http://localhost:5000/signin-oidc");
+            application.oauthConfiguration.authorizedRedirectURLs.Add(authorizedRedirectURL);
             application.oauthConfiguration.requireRegistration = true;
 
             application.oauthConfiguration.enabledGrants = new List<GrantType>
                 { GrantType.authorization_code, GrantType.refresh_token };
-            application.oauthConfiguration.logoutURL = "http://localhost:5000";
+            application.oauthConfiguration.logoutURL = logoutURL;
             application.oauthConfiguration.proofKeyForCodeExchangePolicy = ProofKeyForCodeExchangePolicy.Required;
-            application.name = "DotNetExampleApp";
+            application.name = applicationName;
 
             // assign key from above to sign our tokens. This needs to be asymmetric
             application.jwtConfiguration = new JWTConfiguration();
@@ -79,7 +87,7 @@ namespace Setup
             application.jwtConfiguration.idTokenKeyId = rsaKeyId;
 
             Guid clientId = Guid.Parse(applicationId);
-            String clientSecret = "change-this-in-production-to-be-a-real-secret";
+            
 
             application.oauthConfiguration.clientSecret = clientSecret;
             ApplicationRequest applicationRequest = new ApplicationRequest();
