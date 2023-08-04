@@ -2,7 +2,7 @@
 
 This script will set up a FusionAuth application and link the user you used to sign in to your FusionAuth instance to the application. The script creates a new [FusionAuth Application](https://fusionauth.io/docs/v1/tech/core-concepts/applications) with the following settings:
 
-- The Application is named `.NET Fusion`.
+- The Application is named `.NET FusionAuth Application`.
 - The Application Client ID is `e9fdb985-9173-4e01-9d73-ac2d60d1dc8e`.
 - The Client Secret is `change-this-in-production-to-be-a-real-secret`.
 - The Application has a redirect URL of `https://localhost:5001/callback`.
@@ -70,4 +70,4 @@ fusionauth_api_key=<YOUR_API_KEY> bin/Debug/net7.0/osx-x64/publish/SetupFusionAu
 
 These commands assume you are running on macOS. If you are on a different platform, you will need to modify the [runtime parameter](https://learn.microsoft.com/en-us/dotnet/core/rid-catalog) in `dotnet publish` and the resulting binary output path in the execution command.
 
-After compiling and running the script, FusionAuth should be set up with a new application named `.NET Fusion`, and the user you used to sign in to your FusionAuth instance will be linked to the application.
+After compiling and running the script, FusionAuth should be set up with a new application named `.NET FusionAuth Application`, and the user you used to sign in to your FusionAuth instance will be linked to the application.
