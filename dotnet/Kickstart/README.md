@@ -55,4 +55,3 @@ After running the Docker Compose file, you can access the FusionAuth admin site 
 
 - Email: `dinesh@fusionauth.io`
 - Password: `password`
-
