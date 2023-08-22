@@ -2,7 +2,7 @@
 
 This [Kickstart](https://fusionauth.io/docs/v1/tech/installation-guide/kickstart) will set up a FusionAuth application and create a new user to login to the application. The Kickstart creates a new [FusionAuth Application](https://fusionauth.io/docs/v1/tech/core-concepts/applications) with the following settings:
 
-- The Application is named `.NET Fusion`.
+- The Application is named `.NET FusionAuth Application`.
 - The Application Client ID is `e9fdb985-9173-4e01-9d73-ac2d60d1dc8e`.
 - The Client Secret is `change-this-in-production-to-be-a-real-secret`.
 - The Application has a redirect URL of `https://localhost:5001/callback`.
@@ -15,7 +15,7 @@ The application is set up with the following OAuth settings:
 - JWT (JSON Web Token) is enabled, using a newly generated asymmetric key pair (RSA).
 
 A new user is created with the following credentials:
-- Email: `dinesh@fusionauth.io`
+- Email: `admin@example.com`
 - Password: `password`
 
 ## Prerequisites
@@ -53,5 +53,5 @@ This is useful if you want to start over with a fresh FusionAuth instance.
 
 After running the Docker Compose file, you can access the FusionAuth admin site at [http://localhost:9011](http://localhost:9011). You can log in with the following credentials:
 
-- Email: `dinesh@fusionauth.io`
+- Email: `admin@example.com`
 - Password: `password`
