@@ -55,3 +55,17 @@ After running the Docker Compose file, you can access the FusionAuth admin site 
 
 - Email: `admin@example.com`
 - Password: `password`
+
+
+## Testing
+
+In this directory you can find a  [convenience script](./Program.cs)  that demonstrates making authenticated requests to the project created from the `fusionauthwebapi` template. The script requests a bearer token from your FusionAuth instance that you can use to authorize on the swagger UI and make authenticated requests to the example WeatherForecast API.
+
+To run the script you can set up a dotnet project with the following command:
+
+```
+dotnet new console --output TestWebAPI && cd TestWebAPI
+dotnet add package Newtonsoft.Json
+```
+
+Then copy the code in [`Program.cs`](./Program.cs) to your local `Program.cs`

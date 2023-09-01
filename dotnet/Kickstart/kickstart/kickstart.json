@@ -43,6 +43,7 @@
                         "logoutURL": "#{logoutURL}",
                         "enabledGrants": [
                             "authorization_code",
+                            "password",
                             "refresh_token"
                         ],
                         "clientSecret": "#{applicationClientSecret}",
