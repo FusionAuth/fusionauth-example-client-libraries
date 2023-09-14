@@ -27,7 +27,7 @@
       "body": {
         "key": {
           "algorithm": "RS256",
-          "name": "For .NET FusionAuth Application",
+          "name": "For Example Application",
           "length": 2048
         }
       }
@@ -38,7 +38,7 @@
       "tenantId": "#{defaultTenantId}",
       "body": {
         "application": {
-          "name": ".NET FusionAuth Application",
+          "name": "Example Application",
           "oauthConfiguration": {
             "authorizedRedirectURLs": [
               "#{authorizedRedirectURL}"
