@@ -51,7 +51,7 @@ In the root directory of this repository you will find a [README](../../README.m
 The [Kickstart](https://fusionauth.io/docs/v1/tech/installation-guide/kickstart) will set up a FusionAuth application and create a new user to login to the application. The Kickstart creates a new [FusionAuth Application](https://fusionauth.io/docs/v1/tech/core-concepts/applications) with the following settings:
 
 - The Application is named `Example Application`.
-- The Application Client ID is `e9fdb985-9173-4e01-9d73-ac2d60d1dc8e`.
+- The Application Client Id is `e9fdb985-9173-4e01-9d73-ac2d60d1dc8e`.
 - The Client Secret is `change-this-in-production-to-be-a-real-secret`.
 - The Application has a redirect URL of `https://localhost:5001/callback`.
 - The Application has a logout URL of `https://localhost:5001/`.

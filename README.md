@@ -8,9 +8,8 @@ You can [learn more about our client libraries.](https://fusionauth.io/docs/v1/t
 
 ## Install FusionAuth Locally
 
-If you have docker, you can install FusionAuth locally to test out these scripts.
+If you have [Docker](https://www.docker.com/), you can install FusionAuth locally to test out these scripts.
 
-* You will need [Docker](https://www.docker.com/)
 * Clone this repository `git clone https://github.com/FusionAuth/fusionauth-example-client-libraries.git`
 * Run `docker compose up -d` to stand up FusionAuth.
 * Use [the API key found in the kickstart file](/kickstart/kickstart.json#L15) whenever one is needed.
@@ -23,7 +22,7 @@ To help you set up a valid application in FusionAuth, we have created a FusionAu
 This [Kickstart](https://fusionauth.io/docs/v1/tech/installation-guide/kickstart) will set up a FusionAuth application and create a new user to login to the application. The Kickstart creates a new [FusionAuth Application](https://fusionauth.io/docs/v1/tech/core-concepts/applications) with the following settings:
 
 - The Application is named `Example Application`.
-- The Application Client ID is `e9fdb985-9173-4e01-9d73-ac2d60d1dc8e`.
+- The Application Client Id is `e9fdb985-9173-4e01-9d73-ac2d60d1dc8e`.
 - The Client Secret is `change-this-in-production-to-be-a-real-secret`.
 - The Application has a redirect URL of `https://localhost:5001/callback`.
 - The Application has a logout URL of `https://localhost:5001/`.
